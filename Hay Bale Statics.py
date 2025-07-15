@@ -6,7 +6,7 @@ from math import sin, cos, atan2, sqrt, pi
 #------- this might also be useful for other fourbar linkages, but you must confirm it!!!!
 #Link-12 angle 77.401 degrees
 
-Fy=1000.0 #in the freebody and equations, DOWN was POSITIVE!!!
+Fy=2000.0 #in the freebody and equations, DOWN was POSITIVE!!!
 # non-moving points 1 and 3
 x1, y1 = 4.48, 1.192
 x3, y3 = 2.058, 0.073
@@ -16,11 +16,9 @@ x4, y4 = 3.037,      8.285
 xf, yf = 12.376,     11.161
 
 #------------------ no changes needed after this line ---------------
-
 #a useful conversion
 DtoR = pi/180.0
 RtoD = 1/DtoR
-
 #define the 4 angles that changes as the mechanism moves
 th12 = atan2(y2-y1,x2-x1);    th34 = atan2(y4-y3,x4-x3)
 th24 = atan2(y4-y2,x4-x2); th2F = atan2(yf-y2,xf-x2)
@@ -42,11 +40,9 @@ def equations(guesses):
         f1x + f2x,  #forces and moments on link 12
         f1y + f2y,
         M - f2x*L12*sin(th12) + f2y*L12*cos(th12),
-
         f3x + f4x,  #forces and moments on link 34
         f3y + f4y,
         -f4x*L34*sin(th34) + f4y*L34*cos(th34),
-
         -f2x-f4x,  #forces and moments on link 24
         -f2y - f4y - Fy,
         -Fy*L2F*cos(th2F) +f4x*L24*sin(th24) -f4y*L24*cos(th24)
