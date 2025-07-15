@@ -6,7 +6,7 @@ from math import sin, cos, atan2, sqrt, pi
 #------- this might also be useful for other fourbar linkages, but you must confirm it!!!!
 #Link-12 angle 77.401 degrees
 
-Fy=5000.0 #in the freebody and equations, DOWN was POSITIVE!!!
+Fy=7000.0 #in the freebody and equations, DOWN was POSITIVE!!!
 # non-moving points 1 and 3
 x1, y1 = 4.48, 1.192
 x3, y3 = 2.058, 0.073
