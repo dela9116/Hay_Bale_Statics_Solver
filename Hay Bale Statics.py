@@ -6,7 +6,7 @@ from math import sin, cos, atan2, sqrt, pi
 #------- this might also be useful for other fourbar linkages, but you must confirm it!!!!
 #Link-12 angle 77.401 degrees
 
-Fy=2000.0 #in the freebody and equations, DOWN was POSITIVE!!!
+Fy=5000.0 #in the freebody and equations, DOWN was POSITIVE!!!
 # non-moving points 1 and 3
 x1, y1 = 4.48, 1.192
 x3, y3 = 2.058, 0.073
@@ -40,6 +40,7 @@ def equations(guesses):
         f1x + f2x,  #forces and moments on link 12
         f1y + f2y,
         M - f2x*L12*sin(th12) + f2y*L12*cos(th12),
+
         f3x + f4x,  #forces and moments on link 34
         f3y + f4y,
         -f4x*L34*sin(th34) + f4y*L34*cos(th34),
@@ -47,6 +48,7 @@ def equations(guesses):
         -f2y - f4y - Fy,
         -Fy*L2F*cos(th2F) +f4x*L24*sin(th24) -f4y*L24*cos(th24)
     ]
+#call the solver
 answer = fsolve(equations, [0,0,0,0,0,0,0,0,0])
 # print(answer)
 # print()
