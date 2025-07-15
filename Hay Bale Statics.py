@@ -51,6 +51,7 @@ def equations(guesses):
         -Fy*L2F*cos(th2F) +f4x*L24*sin(th24) -f4y*L24*cos(th24)
     ]
 #call the solver
+# added by the second branch
 answer = fsolve(equations, [0,0,0,0,0,0,0,0,0])
 # print(answer)
 # print()
